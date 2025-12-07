@@ -37,4 +37,32 @@ public class Rechner extends JFrame {
 
         add(displayPanel, BorderLayout.NORTH);
     }
+    // Tasten-Panel erstellen
+    private void initButtonPanel() {
+        JPanel buttonPanel = new JPanel(new GridLayout(5, 4, 2, 2));
+        buttonPanel.setBackground(new Color(88, 108, 0));
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        String[] buttons = {
+                "", "", "", "*",
+                "7", "8", "9", "-",
+                "4", "5", "6", "+",
+                "1", "2", "3", "/",
+                "C", "0", "<",  "="
+        };
+
+        for (String text : buttons) {
+            JButton btn = new JButton(text);
+            btn.setFont(new Font("Arial", Font.BOLD, 20));
+            btn.setBackground(new Color(245, 245, 245));
+            btn.setForeground(Color.BLACK);
+            btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            btn.setFocusPainted(false);
+
+            btn.addActionListener(e -> handleButton(text));
+            buttonPanel.add(btn);
+        }
+
+        add(buttonPanel, BorderLayout.CENTER);
+    }
 }
