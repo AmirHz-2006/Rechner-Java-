@@ -65,4 +65,48 @@ public class Rechner extends JFrame {
 
         add(buttonPanel, BorderLayout.CENTER);
     }
+    // Logik für Tasten
+    private void handleButton(String text) {
+        switch (text) {
+            case "C":                // Alles löschen
+                display.setText("");
+                num1 = num2 = 0;
+                operator = ' ';
+                operatorPressed = false;
+                break;
+            case "<":                 // Letzte Zahl löschen
+                String current = display.getText();
+                if (!current.isEmpty()) {
+                    display.setText(current.substring(0, current.length() - 1));
+                }
+                break;
+            case "+": case "-": case "*": case "/":           // Operatoren
+                if (!display.getText().isEmpty()) {
+                    try {
+                        num1 = Double.parseDouble(display.getText());
+                        operator = text.charAt(0);
+                        operatorPressed = true;
+                        display.setText("");
+                    } catch (NumberFormatException ex) {
+                        showError("Invalid input");
+                    }
+                }
+                break;
+            case "=":            // Ergebnis berechnen
+                if (!display.getText().isEmpty() && operatorPressed) {
+                    try {
+                        num2 = Double.parseDouble(display.getText());
+                        double result = calculate(num1, num2, operator);
+                        display.setText(String.valueOf(result));
+                        num1 = result;    // Ergebnis für nächste Berechnung speichern
+                        operatorPressed = false;
+                    } catch (NumberFormatException ex) {
+                        showError("Invalid input");
+                    }
+                }
+                break;
+            default:        // Zahlen
+                display.setText(display.getText() + text);
+        }
+    }
 }
