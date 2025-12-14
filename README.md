@@ -1,44 +1,68 @@
 # 🧮 Rechner mit GUI
 
-Ein einfacher grafischer Taschenrechner mit Java Swing, der Grundoperationen und Fehlerbehandlung unterstützt.
+Ein einfacher grafischer Taschenrechner mit Java Swing.
 
 ---
 
 ## 🚀 Funktionen
 
-- Grundrechenarten: Addition, Subtraktion, Multiplikation, Division  
-- Eingabe über Tastenfeld (0–9, ., C, <, =)  
-- Fehlerbehandlung bei ungültiger Eingabe und Division durch Null  
-- Mehrsprachige Meldungen (Deutsch & Arabisch)  
-- GUI mit festen Farben und Layout  
+- Grundrechenarten: Addition, Subtraktion, Multiplikation, Division
+  
+- Unterstützung für Dezimalzahlen
+
+- Eingabe löschen und zurücksetzen
+
+- Fehlermeldungen bei ungültiger Eingabe
+
+- Kontinuierliche Berechnung (Ergebnis kann weiterverwendet werden)
+
+- Statisches, übersichtliches GUI-Layout 
 
 ---
 
 ## 📦 Technologien
 
-- Java  
-- Swing (JFrame, JPanel, JTextField, JButton)  
-- Layouts: BorderLayout, GridLayout  
+- Java
+
+- Swing (JFrame, JPanel, JTextField, JButton)
+
+- Layouts: BorderLayout, GridLayout
+
+- JOptionPane für Fehlermeldungen  
 
 ---
 
 ## 📁 Projektstruktur
 
 
-├── Rechner.java └── README.md
+├── Rechner.java
 
 
 ---
 
 ## 🧑‍💻 Bedienung
 
-- GUI zeigt ein Display und Tastenfeld  
-- Zahlen und Operatoren können per Klick eingegeben werden  
-- „C“ löscht alles, „<“ löscht letzte Ziffer  
-- „=“ zeigt das Ergebnis  
-- Fehler werden über Dialogfenster angezeigt  
+- GUI zeigt ein Display und ein Tastenfeld
+
+- Zahlen und Operatoren können per Klick eingegeben werden
+
+- „C“ löscht alles
+
+- „<“ löscht die letzte Ziffer
+
+- „=“ zeigt das Ergebnis
+
+- Fehler (z. B. ungültige Eingabe) werden über Dialogfenster angezeigt
 
 ---
+
+## 📌 Hinweise
+
+- Die Eingabe muss eine gültige Zahl sein
+
+- Division durch Null wird verhindert
+
+- Das Layout ist nicht skalierbar (feste Fenstergröße)
 
 ## 📄 Lizenz
 
