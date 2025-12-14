@@ -109,4 +109,28 @@ public class Rechner extends JFrame {
                 display.setText(display.getText() + text);
         }
     }
+    // Berechnungslogik
+    private double calculate(double a, double b, char op) {
+        switch (op) {
+            case '+': return a + b;
+            case '-': return a - b;
+            case '*': return a * b;
+            case '/':
+                if (b != 0) return a / b;
+                showError("Division by zero is not allowed");
+                return 0;
+            default: return 0;
+        }
+    }
+    // Fehlermeldung anzeigen
+    private void showError(String message) {
+        JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    // Hauptmethode
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            Rechner gui = new Rechner();
+            gui.setVisible(true);
+        });
+    }
 }
